@@ -395,7 +395,7 @@ jobs:
               .filter(j => j.name.startsWith('Update commit on PR'))
               .every(j => j.conclusion === 'success');
 
-            let body = `Update Versions workflow has completed with ${ success ? 'success' : 'failure' }.`;
+            let body = `Update Commit workflow has completed with ${ success ? 'success' : 'failure' }.`;
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
